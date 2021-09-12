@@ -1,6 +1,7 @@
 import { Avatar, Box, Center, Checkbox, Divider, Heading, Input, List, ListItem, Stack } from '@chakra-ui/react'
 import { motion, useAnimation } from 'framer-motion';
 import type { NextPage } from 'next'
+import Head from 'next/head';
 import React, { FormEvent, useEffect, useState } from 'react'
 
 const Home: NextPage = () => {
@@ -27,6 +28,9 @@ const Home: NextPage = () => {
 
   return (
     <Box height={'100vh'} width={'100%'}>
+      <Head>
+        <title>Coding Experiments | Todo List</title>
+      </Head>
       <Center height={'100%'}>
         <Box
           width={'96'}
@@ -40,7 +44,7 @@ const Home: NextPage = () => {
             justifyContent={'space-between'}
           >
             <Heading size={'md'}>My Todo List</Heading>
-            <Avatar size={'sm'} />
+            <Avatar src={'https://avatar-endpoint.herokuapp.com/api/'} size={'sm'} />
           </Stack>
           <Divider marginY={'2'} />
           <form onSubmit={onSubmitHandler}>
